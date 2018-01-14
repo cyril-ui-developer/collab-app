@@ -1,5 +1,46 @@
-<p>
-  sidebar works!
-</p>
-<app-header></app-header>
-<router-outlet></router-outlet>
+
+<!--
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened="true">Sidenav content</mat-sidenav>
+    <mat-sidenav-content>Main content
+
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container> -->
+  <mat-sidenav-container class="app-sidenav-container">
+      <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10"
+                   [opened]="!isScreenSmall()"
+                   [mode]="isScreenSmall() ? 'over' : 'side'">
+        <mat-toolbar color="primary">
+
+        </mat-toolbar>
+        <h4>Categories   <button mat-icon-button color='primary'>Add Category</button></h4>
+
+        <mat-nav-list>
+          <mat-list-item >
+             <a matLine [routerLink]="['/']">
+               <mat-icon svgIcon=""></mat-icon> category one
+             </a>
+
+          </mat-list-item>
+          <mat-list-item >
+
+              <a matLine [routerLink]="['/']">
+               <mat-icon svgIcon=""></mat-icon> category two
+             </a>
+           </mat-list-item>
+        </mat-nav-list>
+
+      </mat-sidenav>
+
+      <div class="app-sidenav-content">
+        <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
+        <div class="wrapper">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+    </mat-sidenav-container>
+
+

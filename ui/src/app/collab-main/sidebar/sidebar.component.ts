@@ -12,4 +12,9 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
   }
 
+  isScreenSmall(): boolean {
+   // return this.mediaMatcher.matches;
+   return false;
+  }
+
 }
