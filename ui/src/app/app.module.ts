@@ -1,10 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
+import { CollabMainModule } from './collab-main/collab-main.module';
+
+const routes: Routes = [
+   { path: '', loadChildren: './collab-main/collab-main.module#CollabMainModule' },
+  //{ path: '', component: AppComponent },
+  { path: '**', redirectTo: '' }
+];
 
 
 @NgModule({
@@ -15,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
 BrowserAnimationsModule,
-SharedModule
+CollabMainModule,
+RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
