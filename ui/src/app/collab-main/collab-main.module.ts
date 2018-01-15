@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MainContentComponent } from './main-content/main-content.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
+import { RightOutletComponent } from './right-outlet/right-outlet.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { HeaderComponent } from './header/header.component';
     SharedModule
 
   ],
-  declarations: [CollabMainComponent, MainContentComponent, SidebarComponent, HeaderComponent]
+  declarations: [CollabMainComponent, MainContentComponent, SidebarComponent, HeaderComponent, RightOutletComponent]
 })
 export class CollabMainModule { }

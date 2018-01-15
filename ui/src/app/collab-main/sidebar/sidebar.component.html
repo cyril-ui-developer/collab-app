@@ -1,4 +1,3 @@
-
 <!--
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav mode="side" opened="true">Sidenav content</mat-sidenav>
@@ -8,39 +7,47 @@
         <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container> -->
-  <mat-sidenav-container class="app-sidenav-container">
-      <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10"
-                   [opened]="!isScreenSmall()"
-                   [mode]="isScreenSmall() ? 'over' : 'side'">
-        <mat-toolbar color="primary">
+<mat-sidenav-container class="app-sidenav-container">
+  <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10" [opened]="!isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'">
+    <mat-toolbar color="primary">
 
-        </mat-toolbar>
-        <h4>Categories   <button mat-icon-button color='primary'>Add Category</button></h4>
+    </mat-toolbar>
+    <h4>Categories
+      <button mat-icon-button color='primary'>Add Category</button>
+    </h4>
 
-        <mat-nav-list>
-          <mat-list-item >
-             <a matLine [routerLink]="['/']">
-               <mat-icon svgIcon=""></mat-icon> category one
-             </a>
+    <mat-nav-list>
+      <mat-list-item>
+        <a matLine [routerLink]="['/']">
+          <mat-icon svgIcon=""></mat-icon> category one
+        </a>
 
-          </mat-list-item>
-          <mat-list-item >
+      </mat-list-item>
+      <mat-list-item>
 
-              <a matLine [routerLink]="['/']">
-               <mat-icon svgIcon=""></mat-icon> category two
-             </a>
-           </mat-list-item>
-        </mat-nav-list>
+        <a matLine [routerLink]="['/']">
+          <mat-icon svgIcon=""></mat-icon> category two
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
 
-      </mat-sidenav>
+  </mat-sidenav>
 
-      <div class="app-sidenav-content">
-        <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
-        <div class="wrapper">
-          <router-outlet></router-outlet>
-        </div>
-      </div>
+  <div class="app-sidenav-content">
+    <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
+    <div class="wrapper">
+      <!-- <router-outlet></router-outlet> -->
+      <!-- <router-outlet name="sidebar"></router-outlet> -->
 
-    </mat-sidenav-container>
+      <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile>
+          <app-main-content></app-main-content>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <app-right-outlet></app-right-outlet>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
 
-
+</mat-sidenav-container>

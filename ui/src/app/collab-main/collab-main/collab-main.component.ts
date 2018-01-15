@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute , Router} from '@angular/router';
 
 @Component({
   selector: 'app-collab-main',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollabMainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) {
+    //this.navigateDetails('/col(sidebar:rightoutlet)');
+   }
 
   ngOnInit() {
   }
+
 
 }

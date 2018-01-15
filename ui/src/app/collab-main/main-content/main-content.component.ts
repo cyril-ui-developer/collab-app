@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute , Router} from '@angular/router';
 
 @Component({
   selector: 'app-main-content',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.navigateDetails('/(sidebar:rightoutlet)');
+   }
 
   ngOnInit() {
   }
 
+  navigateDetails(sidebarPath) {
+    this.router.navigateByUrl(sidebarPath, { skipLocationChange: true });
+ }
 }
