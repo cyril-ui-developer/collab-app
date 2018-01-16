@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CollabMainModule } from './collab-main/collab-main.module';
+import { CoreModule } from './core/core.module';
 
 const routes: Routes = [
    { path: '', loadChildren: './collab-main/collab-main.module#CollabMainModule' },
@@ -22,7 +23,8 @@ const routes: Routes = [
     BrowserModule,
 BrowserAnimationsModule,
 CollabMainModule,
-RouterModule.forRoot(routes)
+RouterModule.forRoot(routes),
+CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
