@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainContentComponent } from '../main-content/main-content.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  tiles = [
+    {text: 'One', cols: 2, rows: 1, color: 'lightblue'},
+    {text: 'Two', cols: 1, rows: 1, color: 'lightgreen'}
+
+  ];
   constructor() { }
 
   ngOnInit() {
@@ -16,5 +22,6 @@ export class SidebarComponent implements OnInit {
    // return this.mediaMatcher.matches;
    return false;
   }
+
 
 }

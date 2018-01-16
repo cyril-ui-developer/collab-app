@@ -39,14 +39,31 @@
       <!-- <router-outlet></router-outlet> -->
       <!-- <router-outlet name="sidebar"></router-outlet> -->
 
-      <mat-grid-list cols="2" rowHeight="2:1">
+      <!-- <mat-grid-list cols="2" rowHeight="2:1">
         <mat-grid-tile>
           <app-main-content></app-main-content>
         </mat-grid-tile>
         <mat-grid-tile>
-          <app-right-outlet></app-right-outlet>
+
         </mat-grid-tile>
-      </mat-grid-list>
+      </mat-grid-list> -->
+      <mat-grid-list cols="3" rowHeight="500px" gutterSize="15px">
+
+          <mat-grid-tile class="grid-test-1"
+              [colspan]="2"
+              [rowspan]="1"
+              [style.background]='"lightgreen"'>
+              <mat-grid-tile-header>Content</mat-grid-tile-header>
+        <app-main-content></app-main-content>
+          </mat-grid-tile>
+          <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              [style.background]='"lightblue"'>
+              <mat-grid-tile-header>Right Outlet</mat-grid-tile-header>
+              <app-right-outlet></app-right-outlet>
+          </mat-grid-tile>
+        </mat-grid-list>
     </div>
   </div>
 
