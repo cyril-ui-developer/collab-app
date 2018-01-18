@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CollabMainRoutingModule } from './collab-main-routing.module';
 import { CollabMainComponent } from './collab-main/collab-main.component';
@@ -18,7 +19,7 @@ import { CollabService } from './services/collab.service';
   imports: [
     CommonModule,
     CollabMainRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     SharedModule
 

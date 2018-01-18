@@ -12,10 +12,24 @@
     <mat-toolbar color="primary">
 
     </mat-toolbar>
-    <h4>Categories
-      <button mat-icon-button color='primary'>Add Category</button>
-    </h4>
 
+    <mat-card>
+
+      <mat-card-content>
+
+          <mat-input-container style="width:100%" >
+                <input [formControl]="addCategoryControl" name="category"  matInput placeholder="Add Category" required maxlength="20">
+              </mat-input-container>
+          <button mat-raised-button color="primary" (click)="postCategory()" >Add Category</button>
+
+      </mat-card-content>
+
+    </mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h4>Categories</h4>
+      </mat-card-title>
+    </mat-card-header>
     <mat-nav-list>
       <mat-list-item *ngFor='let cat of categories'>
         <a matLine [routerLink]="['/']">
