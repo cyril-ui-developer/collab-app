@@ -14,21 +14,11 @@ export class MainContentComponent implements OnInit {
    }
 
   ngOnInit() {
-this.loadCategories();
+
   }
 
   navigateDetails(sidebarPath) {
     this.router.navigateByUrl(sidebarPath, { skipLocationChange: true });
  }
- loadCategories() {
-  this.collabService.getCategories()
-   .subscribe(
-    (data) => {  this.categories = data;
-     console.log( this.categories )
-    }
-                //(data: AppModel[]) => {  this.categories = data; },
-              //  (error) =>  {this.errorMsg = error; }
-              )
 
-  }
 }

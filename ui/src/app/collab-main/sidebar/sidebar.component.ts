@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MainContentComponent } from '../main-content/main-content.component';
 
 @Component({
@@ -13,9 +13,12 @@ export class SidebarComponent implements OnInit {
     {text: 'Two', cols: 1, rows: 1, color: 'lightgreen'}
 
   ];
+@Input() categories;
+
   constructor() { }
 
   ngOnInit() {
+console.log(this.categories)
   }
 
   isScreenSmall(): boolean {
