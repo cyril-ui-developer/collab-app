@@ -11,8 +11,10 @@ export class CollabService {
   constructor(private apiService: ApiService) { }
 
   getCategories(): Observable<Category[]> {
-    return this.apiService.getAll('http://localhost:3000/' + APIEndpoints.categories.endpoint);
+    return this.apiService.getAll(`http://localhost:3000/${APIEndpoints.categories.endpoint}`);
    }
-
+   postCategory(reqObj): Observable<Category[]> {
+    return this.apiService.postData(`http://localhost:3000/${APIEndpoints.categories.endpoint}`, reqObj);
+   }
 
 }

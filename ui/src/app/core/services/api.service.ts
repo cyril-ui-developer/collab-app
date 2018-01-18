@@ -15,7 +15,9 @@ getAll(url): Observable<any> {
     return this.http.get<any>(url);
 
   }
-
+  postData(url, reqObj): Observable<any> {
+    return this.http.post<any>(url, reqObj);
+  }
 // getAll(url): Observable<any> {
 //   return this.http.get<any>(url)
 //                   .map((response: Response) => {

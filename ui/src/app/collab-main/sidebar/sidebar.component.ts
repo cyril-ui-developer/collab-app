@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from "@angular/core";
 import { MainContentComponent } from "../main-content/main-content.component";
 import { FormGroup, FormControl } from "@angular/forms";
 
+import { CollabService } from '../services/collab.service';
+
 @Component({
   selector: "app-sidebar",
   templateUrl: "./sidebar.component.html",
@@ -16,7 +18,7 @@ export class SidebarComponent implements OnInit {
   private category;
   addCategoryControl = new FormControl();
 
-  constructor() {}
+  constructor(private collabService: CollabService) {}
 
   ngOnInit() {
     console.log(this.categories);
@@ -33,7 +35,7 @@ export class SidebarComponent implements OnInit {
   }
   postCategory() {
     this.addCategory();
-    //this.apiService.postMessage({msg: this.postMsg });
+    this.collabService.postCategory({name: this.category }).subscribe(data => data;
     console.log(this.category);
   }
 }
