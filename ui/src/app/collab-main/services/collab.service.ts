@@ -19,11 +19,11 @@ export class CollabService {
     return this.apiService.postData(`http://localhost:3000/${APIEndpoints.categories.endpoint}`, reqObj);
    }
 
-   sendPost(reqObj): Observable<Category> {
+   sendPost(reqObj): Observable<Post> {
     return this.apiService.postData(`http://localhost:3000/${APIEndpoints.posts.endpoint}`, reqObj);
    }
 
-   getPosts(): Observable<Post[]> {
-    return this.apiService.getAll(`http://localhost:3000/${APIEndpoints.posts.endpoint}`);
+   getPosts(reqObj): Observable<Post[]> {
+    return this.apiService.postData(`http://localhost:3000/${APIEndpoints.posts.endpoint}`, reqObj);
    }
 }

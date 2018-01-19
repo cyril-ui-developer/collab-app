@@ -3,6 +3,7 @@ import { ActivatedRoute , Router} from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { CollabService } from '../services/collab.service';
+import { Post } from '../models/post';
 
 @Component({
   selector: 'app-main-content',
@@ -14,6 +15,7 @@ export class MainContentComponent implements OnInit {
   post;
   addPostControl = new FormControl();
   serverMessage;
+  posts: Post[];
 
   constructor(private route: ActivatedRoute, private router: Router, private collabService: CollabService) {
     //this.navigateDetails('/(sidebar:rightoutlet)');
@@ -22,7 +24,9 @@ export class MainContentComponent implements OnInit {
   ngOnInit() {
 console.log(this.route.snapshot.params['id'])
 
-//this.collabService.getPosts
+   this.collabService.getPosts({category: this.route.snapshot.params['id']}).subscribe(data => {
+   console.log(this.posts)
+    this.posts = data; })
   }
 
   navigateDetails(sidebarPath) {
