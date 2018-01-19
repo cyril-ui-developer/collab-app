@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../core/services/api.service';
 import { APIEndpoints } from '../../constants/api-endpoints.constant';
 import { Category } from '../models/category';
+import { Post } from '../models/post';
 
 @Injectable()
 export class CollabService {
@@ -13,8 +14,16 @@ export class CollabService {
   getCategories(): Observable<Category[]> {
     return this.apiService.getAll(`http://localhost:3000/${APIEndpoints.categories.endpoint}`);
    }
-   postCategory(reqObj): Observable<Category[]> {
+
+   postCategory(reqObj): Observable<Category> {
     return this.apiService.postData(`http://localhost:3000/${APIEndpoints.categories.endpoint}`, reqObj);
    }
 
+   sendPost(reqObj): Observable<Category> {
+    return this.apiService.postData(`http://localhost:3000/${APIEndpoints.posts.endpoint}`, reqObj);
+   }
+
+   getPosts(): Observable<Post[]> {
+    return this.apiService.getAll(`http://localhost:3000/${APIEndpoints.posts.endpoint}`);
+   }
 }

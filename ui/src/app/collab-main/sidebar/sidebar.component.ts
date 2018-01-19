@@ -35,7 +35,7 @@ export class SidebarComponent implements OnInit {
   }
   postCategory() {
    // this.handleChange();
-    this.collabService.postCategory({name: this.category }).subscribe(data => data;
+    this.collabService.postCategory({name: this.category }).subscribe(data => data);
     console.log(this.category);
   }
 }

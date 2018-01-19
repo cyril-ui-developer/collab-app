@@ -7,14 +7,15 @@ import { RightOutletComponent } from './right-outlet/right-outlet.component';
 
 const routes: Routes = [
   { path: '', component: CollabMainComponent},
-  //{path: 'col', component: MainContentComponent },
-  {path: 'rightoutlet', component: RightOutletComponent, outlet: 'sidebar' },
-  //  children: [
-  //           {path: '', component: MainContentComponent },
-  //           {path: '', component: RightOutletComponent, outlet: 'sidebar' },
+  {path: 'posts/:id', component: MainContentComponent },
+  //{path: 'rightoutlet', component: RightOutletComponent, outlet: 'sidebar' },
+// {
+//    children: [
+//             {path: '', component: MainContentComponent },
+//          //   {path: '', component: RightOutletComponent, outlet: 'sidebar' },
 
-  //  ]
-  //}
+//    ]
+//   },
 
   { path: '**', redirectTo: '' }
 ];

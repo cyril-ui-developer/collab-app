@@ -1,5 +1,17 @@
 
-<mat-card> main-content works!</mat-card>
+
+<mat-card>
+<h4>main-content works</h4>
+  <mat-card-content>
+
+      <mat-input-container style="width:100%" >
+            <input [formControl]="addPostControl" (change)="handleChange($event)" name="body"  matInput placeholder="Enter Post" required maxlength="100">
+          </mat-input-container>
+      <button mat-raised-button color="primary" (click)="sendPost()" >Post</button>
+
+  </mat-card-content>
+
+</mat-card>
 
 
 

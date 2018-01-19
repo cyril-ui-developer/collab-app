@@ -32,7 +32,7 @@
     </mat-card-header>
     <mat-nav-list>
       <mat-list-item *ngFor='let cat of categories'>
-        <a matLine [routerLink]="['/']">
+        <a matLine [routerLink]="['/posts', cat._id]">
           <mat-icon svgIcon=""></mat-icon>{{cat.name}}
         </a>
       </mat-list-item>
@@ -60,16 +60,16 @@
               [colspan]="2"
               [rowspan]="1"
               [style.background]='"lightgreen"'>
-              <mat-grid-tile-header>Content</mat-grid-tile-header>
-        <app-main-content></app-main-content>
+              <mat-grid-tile-header>Main Page</mat-grid-tile-header>
+        <!-- <app-main-content></app-main-content> -->
           </mat-grid-tile>
-          <mat-grid-tile
+          <!-- <mat-grid-tile
               [colspan]="1"
               [rowspan]="1"
               [style.background]='"lightblue"'>
               <mat-grid-tile-header>Right Outlet</mat-grid-tile-header>
               <app-right-outlet></app-right-outlet>
-          </mat-grid-tile>
+          </mat-grid-tile> -->
         </mat-grid-list>
     </div>
   </div>
