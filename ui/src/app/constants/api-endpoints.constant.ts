@@ -3,9 +3,13 @@ export const APIEndpoints: APIEndpointsModel = {
      endpoint: 'categories',
      msg:  '......'
  },
- posts: {
-  endpoint: 'posts',
+ post: {
+  endpoint: 'post',
   msg:  '......'
+},
+posts: {
+ endpoint: 'posts',
+ msg:  '......'
 }
 
 };
@@ -13,6 +17,7 @@ export const APIEndpoints: APIEndpointsModel = {
 interface APIEndpointsModel {
 categories: Categories;
 posts: Categories;
+post: Categories;
 }
 
 interface Categories  {

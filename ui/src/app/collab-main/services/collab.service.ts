@@ -20,7 +20,7 @@ export class CollabService {
    }
 
    sendPost(reqObj): Observable<Post> {
-    return this.apiService.postData(`http://localhost:3000/${APIEndpoints.posts.endpoint}`, reqObj);
+    return this.apiService.postData(`http://localhost:3000/${APIEndpoints.post.endpoint}`, reqObj);
    }
 
    getPosts(reqObj): Observable<Post[]> {
