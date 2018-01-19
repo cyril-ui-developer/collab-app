@@ -28,13 +28,13 @@ export class SidebarComponent implements OnInit {
     // return this.mediaMatcher.matches;
     return false;
   }
-  addCategory() {
-    this.addCategoryControl.valueChanges.subscribe(value => {
-      this.category = value;
-    });
+  handleChange(e) {
+   // this.addCategoryControl.valueChanges.subscribe(value => {
+      this.category = e.target.value;
+   // });
   }
   postCategory() {
-    this.addCategory();
+   // this.handleChange();
     this.collabService.postCategory({name: this.category }).subscribe(data => data;
     console.log(this.category);
   }

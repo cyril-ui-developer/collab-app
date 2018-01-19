@@ -18,7 +18,7 @@
       <mat-card-content>
 
           <mat-input-container style="width:100%" >
-                <input [formControl]="addCategoryControl" name="category"  matInput placeholder="Add Category" required maxlength="20">
+                <input [formControl]="addCategoryControl" (change)="handleChange($event)" name="category"  matInput placeholder="Add Category" required maxlength="20">
               </mat-input-container>
           <button mat-raised-button color="primary" (click)="postCategory()" >Add Category</button>
 
