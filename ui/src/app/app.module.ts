@@ -7,9 +7,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CollabMainModule } from './collab-main/collab-main.module';
 import { CoreModule } from './core/core.module';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-   { path: '', loadChildren: './collab-main/collab-main.module#CollabMainModule' },
+  { path: '', component: AppComponent },
+  //  { path: '', loadChildren: './collab-main/collab-main.module#CollabMainModule' },
   //{ path: '', component: AppComponent },
   { path: '**', redirectTo: '' }
 ];
@@ -18,6 +20,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
 
   ],
   imports: [

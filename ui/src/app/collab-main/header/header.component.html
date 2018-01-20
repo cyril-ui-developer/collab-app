@@ -1,5 +1,9 @@
 
 <mat-toolbar color="primary">
-    Collab - Collaboration Messaging App
+    <button md-button routerLink="/"> Collab - Collaboration Messaging App</button>
+    <span style="flex: 1 1 auto"></span>
+    <button md-button *ngIf="true" routerLink="/register">Register</button>
+    <button md-button *ngIf="false"  >Logout</button>
+    <button md-button *ngIf="true" routerLink="/login">Login</button>
   </mat-toolbar>
 

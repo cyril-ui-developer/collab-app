@@ -14,6 +14,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { RightOutletComponent } from './right-outlet/right-outlet.component';
 import { CollabService } from './services/collab.service';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -24,7 +26,7 @@ import { CollabService } from './services/collab.service';
     SharedModule
 
   ],
-  declarations: [CollabMainComponent, MainContentComponent, SidebarComponent, HeaderComponent, RightOutletComponent],
+  declarations: [CollabMainComponent, MainContentComponent, SidebarComponent, HeaderComponent, RightOutletComponent, RegisterComponent, LoginComponent],
   providers: [CollabService]
 })
 export class CollabMainModule { }
