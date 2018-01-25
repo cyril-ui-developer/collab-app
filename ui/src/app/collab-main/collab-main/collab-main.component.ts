@@ -10,7 +10,7 @@ import { Category } from '../models/category';
   styleUrls: ['./collab-main.component.scss']
 })
 export class CollabMainComponent implements OnInit {
-  private categories: Category[];
+  public categories: Category[];
   private errorMsg = 'fgh';
 
   constructor(private route: ActivatedRoute, private router: Router, private collabService: CollabService) {

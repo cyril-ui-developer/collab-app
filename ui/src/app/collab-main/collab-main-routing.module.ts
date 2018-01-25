@@ -4,14 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { CollabMainComponent } from './collab-main/collab-main.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { RightOutletComponent } from './right-outlet/right-outlet.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: CollabMainComponent ,   children: [
-    {path: 'posts/:id', component: MainContentComponent }]},
-    {path: 'register', component: RegisterComponent},
-    {path: 'login', component: LoginComponent},
+  { path: '', component: CollabMainComponent },
+
     //     {path: '', component: RightOutletComponent, outlet: 'sidebar' },
 
     //    ]},
@@ -25,7 +21,7 @@ const routes: Routes = [
 //    ]
 //   },
 
-  { path: '**', redirectTo: '' }
+ // { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -7,10 +7,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CollabMainModule } from './collab-main/collab-main.module';
 import { CoreModule } from './core/core.module';
-import { RegisterComponent } from './register/register.component';
 
+
+//remove shared module after refactoring
+// import { SharedModule } from './shared/shared.module';
 const routes: Routes = [
-  { path: '', component: AppComponent },
+ // { path: '', component: AppComponent },
+
   //  { path: '', loadChildren: './collab-main/collab-main.module#CollabMainModule' },
   //{ path: '', component: AppComponent },
   { path: '**', redirectTo: '' }
@@ -19,16 +22,17 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegisterComponent,
+    AppComponent
 
   ],
   imports: [
     BrowserModule,
-BrowserAnimationsModule,
-CollabMainModule,
-RouterModule.forRoot(routes),
-CoreModule
+    BrowserAnimationsModule,
+    CoreModule,
+    CollabMainModule,
+    RouterModule.forRoot(routes),
+
+//SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
