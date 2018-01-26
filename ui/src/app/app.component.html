@@ -1,6 +1,30 @@
 <app-collab-header> </app-collab-header>
 <router-outlet></router-outlet>
+<mat-grid-list cols="4" rowHeight="500px" gutterSize="15px">
+    <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"
+    [style.background]='"lightblue"'>
+    <app-left-outlet [categories]='categories'></app-left-outlet>
+</mat-grid-tile>
+    <mat-grid-tile class="grid-test-1"
+        [colspan]="2"
+        [rowspan]="1"
+        [style.background]='"lightgreen"' >
 
+        <mat-grid-tile-header>Main Page2</mat-grid-tile-header>
+<!-- <app-default-main-content></app-default-main-content> -->
+<!-- <mat-grid-tile-footer>footer</mat-grid-tile-footer> -->
+<router-outlet name='center'></router-outlet>
+    </mat-grid-tile>
+    <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+        [style.background]='"lightblue"'>
+        <mat-grid-tile-header>Right Outlet</mat-grid-tile-header>
+        <!-- <app-right-outlet></app-right-outlet> -->
+    </mat-grid-tile>
+  </mat-grid-list>
 <!-- <input type="text" #newquery
 [value]="query"
 (keydown.enter)="submit(newquery.value)">

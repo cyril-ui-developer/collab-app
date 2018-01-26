@@ -14,7 +14,7 @@ export class CollabMainComponent implements OnInit {
   private errorMsg = 'fgh';
 
   constructor(private route: ActivatedRoute, private router: Router, private collabService: CollabService) {
-    //this.navigateDetails('/col(sidebar:rightoutlet)');
+  //  this.navigateDetails('/(center:defaultcenter)');
    }
 
   ngOnInit() {
@@ -26,5 +26,7 @@ export class CollabMainComponent implements OnInit {
                   (error) =>  {this.errorMsg = error; }
                 );
     }
-
+    navigateDetails(sidebarPath) {
+      this.router.navigateByUrl(sidebarPath, { skipLocationChange: true });
+   }
 }

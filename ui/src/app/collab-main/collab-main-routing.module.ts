@@ -7,8 +7,7 @@ import { RightOutletComponent } from './right-outlet/right-outlet.component';
 
 const routes: Routes = [
   { path: '', component: CollabMainComponent },
-
-    //     {path: '', component: RightOutletComponent, outlet: 'sidebar' },
+  {path: 'defaultcenter/:id', component: MainContentComponent, outlet: 'center' },
 
     //    ]},
  //  {path: 'posts/:id', component: MainContentComponent },

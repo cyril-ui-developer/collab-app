@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CollabMainModule } from './collab-main/collab-main.module';
 import { CoreModule } from './core/core.module';
-
+import { SharedModule } from './shared/shared.module';
 
 //remove shared module after refactoring
 // import { SharedModule } from './shared/shared.module';
@@ -29,10 +29,11 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
+    SharedModule,
     CollabMainModule,
     RouterModule.forRoot(routes),
 
-//SharedModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

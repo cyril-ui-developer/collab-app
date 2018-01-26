@@ -17,7 +17,8 @@
   </mat-card-header>
   <mat-nav-list>
     <mat-list-item *ngFor='let cat of categories'>
-      <a matLine [routerLink]="['/posts', cat._id]">
+      <!-- <a matLine [routerLink]="['/posts', cat._id]"> -->
+        <a matLine [routerLink]="{outlets:{ 'center':['defaultcenter', cat._id]}}">
         <mat-icon svgIcon=""></mat-icon>{{cat.name}}
       </a>
     </mat-list-item>

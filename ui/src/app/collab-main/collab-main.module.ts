@@ -39,6 +39,7 @@ const routes: Routes = [
   ],
   declarations: [CollabMainComponent, MainContentComponent, SidebarComponent,
      RightOutletComponent, LeftSidebarComponent, LeftOutletComponent, DefaultMainContentComponent],
-  providers: [CollabService]
+  providers: [CollabService],
+exports: [LeftOutletComponent]
 })
 export class CollabMainModule { }
